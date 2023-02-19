@@ -22,6 +22,14 @@ public class CityService {
 
         }
 
+        public List<City> getAllDistrict() {
+           List<City> list = cityRepository.findAll();
+           for(City c : list) {
+               c.setDistricts(c.getDistricts());
+           }
+           return list;
+        }
+
     }
 
 

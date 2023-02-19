@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.*;
 
 @Entity
 public class City {
@@ -16,14 +17,17 @@ public class City {
 
     public Integer population;
 
+    private List<District> districts;
+
     public City() {
 
     }
 
-    public City(Long id, String name, Integer population) {
+    public City(Long id, String name, Integer population, List<District> districts) {
         this.id = id;
         this.name = name;
         this.population = population;
+        this.districts = districts;
     }
 
     public Long getId() {
@@ -48,5 +52,13 @@ public class City {
 
     public void setPopulation(Integer population) {
         this.population = population;
+    }
+
+    public List<District> getDistricts() {
+        return districts;
+    }
+
+    public void setDistricts(List<District> districts) {
+        this.districts = districts;
     }
 }

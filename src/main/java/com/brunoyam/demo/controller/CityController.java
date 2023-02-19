@@ -29,4 +29,7 @@ public class CityController {
     String hello1() {
         return "Hello, word";
     }
+
+    @RequestMapping("/listDistrict")
+    List<City> listDistrict() { return cityService.getAllDistrict();}
 }
